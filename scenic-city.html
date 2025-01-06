@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="scenicCity.title">Scenic City - Studio Architecture</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        .project-header {
+            max-width: 1000px;
+            margin: 0 auto 8rem;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 90vh;
+            margin-bottom: 4rem;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .project-meta {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .swiper {
+                height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body class="project-detail">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
+        </div>
+        <div class="nav-links">
+            <div class="nav-menu">
+                <a href="index.html#work" data-i18n="nav.work">Work</a>
+                <a href="index.html#about" data-i18n="nav.about">About</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="language-toggle" aria-label="Sélectionner la langue">
+                        <span class="current-lang">Français</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="language-options">
+                        <button class="language-option" data-lang="fr">Français</button>
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="zh">中文</button>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <article class="project-content">
+            <header class="project-header">
+                <h1 data-i18n="scenicCity.title">Scenic City</h1>
+                <div class="project-meta">
+                    <div>
+                        <p data-i18n="projects.location">Location</p>
+                        <p data-i18n="scenicCity.location">Shanghai, China</p>
+                    </div>
+                    <div>
+                        <p data-i18n="projects.year">Year</p>
+                        <p data-i18n="scenicCity.year">2024</p>
+                    </div>
+                    <div>
+                        <p data-i18n="projects.surface">Surface</p>
+                        <p>125,000 m²</p>
+                    </div>
+                    <div>
+                        <p data-i18n="projects.type">Type</p>
+                        <p data-i18n="scenicCity.type">Urban Development</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="project-gallery">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" 
+                                     data-swiper-parallax="-300"
+                                     alt="Vue panoramique de Scenic City">
+                                <div class="slide-overlay" data-swiper-parallax="-200">
+                                    <h2 data-swiper-parallax="-400" data-i18n="scenicCity.carousel.slide1.title">Vue Panoramique</h2>
+                                    <p data-swiper-parallax="-600" data-i18n="scenicCity.carousel.slide1.subtitle">2024</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e" 
+                                     data-swiper-parallax="-300"
+                                     alt="Vue urbaine de nuit">
+                                <div class="slide-overlay" data-swiper-parallax="-200">
+                                    <h2 data-swiper-parallax="-400" data-i18n="scenicCity.carousel.slide2.title">Vue Nocturne</h2>
+                                    <p data-swiper-parallax="-600" data-i18n="scenicCity.carousel.slide2.subtitle">Urban Lights</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4" 
+                                     data-swiper-parallax="-300"
+                                     alt="Architecture moderne">
+                                <div class="slide-overlay" data-swiper-parallax="-200">
+                                    <h2 data-swiper-parallax="-400" data-i18n="scenicCity.carousel.slide3.title">Design Moderne</h2>
+                                    <p data-swiper-parallax="-600" data-i18n="scenicCity.carousel.slide3.subtitle">Innovation</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="https://images.unsplash.com/photo-1506146332389-18140dc7b2fb" 
+                                     data-swiper-parallax="-300"
+                                     alt="Vue aérienne">
+                                <div class="slide-overlay" data-swiper-parallax="-200">
+                                    <h2 data-swiper-parallax="-400" data-i18n="scenicCity.carousel.slide4.title">Vue Aérienne</h2>
+                                    <p data-swiper-parallax="-600" data-i18n="scenicCity.carousel.slide4.subtitle">Perspective</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="text-section">
+                    <p data-i18n="scenicCity.overview">Scenic City est un projet de développement urbain à grande échelle qui redéfinit la relation entre l'architecture moderne et l'environnement naturel. En créant une série d'espaces publics et privés interconnectés, le projet établit un nouveau standard pour la vie urbaine durable.</p>
+                </div>
+
+                <figure class="gallery-item half-width">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e" alt="Vue architecturale">
+                    <figcaption data-i18n="scenicCity.gallery.image1">Vue architecturale</figcaption>
+                </figure>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1554435493-93422e8220c8" alt="Détail architectural">
+                        <figcaption data-i18n="scenicCity.gallery.image2">Détail architectural</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1577493340887-b7bfff550145" alt="Espace public">
+                        <figcaption data-i18n="scenicCity.gallery.image3">Espace public</figcaption>
+                    </figure>
+                </div>
+
+                <figure class="gallery-item full-width">
+                    <img src="https://images.unsplash.com/photo-1545158535-c3f7168c28b6" alt="Vue nocturne">
+                    <figcaption data-i18n="scenicCity.gallery.image4">Vue nocturne</figcaption>
+                </figure>
+            </section>
+
+            <nav class="project-navigation">
+                <a href="index.html" class="back-to-projects" data-i18n="projects.backToProjects">← Retour aux Projets</a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="carousel.js"></script>
+    <script src="translations.js"></script>
+    <script>
+        // Language switcher
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get saved language or use French as default
+            const savedLang = localStorage.getItem('selectedLanguage') || 'fr';
+            console.log('Current language:', savedLang);
+
+            // Apply saved language immediately
+            setLanguage(savedLang);
+
+            // Update language display
+            const currentLangDisplay = document.querySelector('.current-lang');
+            if (currentLangDisplay) {
+                const langNames = {
+                    'fr': 'Français',
+                    'en': 'English',
+                    'zh': '中文'
+                };
+                currentLangDisplay.textContent = langNames[savedLang];
+            }
+
+            // Add click handlers to language options
+            document.querySelectorAll('.language-option').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const lang = e.target.dataset.lang;
+                    console.log('Changing language to:', lang);
+                    localStorage.setItem('selectedLanguage', lang);
+                    window.location.reload();
+                });
+            });
+
+            function setLanguage(lang) {
+                // Set HTML lang attribute
+                document.documentElement.lang = lang;
+                console.log('Applying translations for:', lang);
+                
+                // Update all translations
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.dataset.i18n;
+                    console.log('Translating element:', key);
+                    
+                    try {
+                        const keys = key.split('.');
+                        let translation = translations[lang];
+                        
+                        for (const k of keys) {
+                            translation = translation[k];
+                        }
+                        
+                        if (translation) {
+                            console.log(`Translation found for ${key}:`, translation);
+                            element.textContent = translation;
+                        } else {
+                            console.warn(`No translation found for ${key} in ${lang}`);
+                        }
+                    } catch (error) {
+                        console.error(`Error translating ${key}:`, error);
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

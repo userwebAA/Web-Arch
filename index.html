@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="site.title">Studio Architecture</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
+        </div>
+        <div class="nav-links">
+            <div class="nav-menu">
+                <a href="#work" data-i18n="nav.work">Projets</a>
+                <a href="#about" data-i18n="nav.about">À Propos</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="language-toggle" aria-label="Sélectionner la langue">
+                        <span class="current-lang">Français</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="language-options">
+                        <button class="language-option" data-lang="fr">Français</button>
+                        <button class="language-option" data-lang="en">English</button>
+                        <button class="language-option" data-lang="zh">中文</button>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="work" class="projects">
+            <article class="project-item full-width">
+                <a href="villa-moderne.html">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Villa Moderne">
+                    <div class="project-info">
+                        <h2 data-i18n="villaModerne.title">Villa Moderne</h2>
+                        <p data-i18n="villaModerne.type">Résidentiel / 2024</p>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-item full-width">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Bureau Design">
+                <div class="project-info">
+                    <h2 data-i18n="bureauDesign.title">Bureau Design</h2>
+                    <p data-i18n="bureauDesign.type">Commercial / 2023</p>
+                </div>
+            </article>
+
+            <article class="project-item full-width">
+                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" alt="Loft Urban">
+                <div class="project-info">
+                    <h2 data-i18n="loftUrban.title">Loft Urban</h2>
+                    <p data-i18n="loftUrban.type">Résidentiel / 2023</p>
+                </div>
+            </article>
+
+            <article class="project-item full-width">
+                <a href="scenic-city.html">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" alt="Scenic City">
+                    <div class="project-info">
+                        <h2 data-i18n="scenicCity.title">Scenic City</h2>
+                        <p data-i18n="scenicCity.type">Développement urbain / 2024</p>
+                    </div>
+                </a>
+            </article>
+        </section>
+
+        <section id="about" class="about">
+            <div class="content-wrapper">
+                <h2 data-i18n="about.title">À Propos</h2>
+                <p data-i18n="about.description">Notre studio d'architecture crée des espaces qui transcendent l'ordinaire. Nous travaillons à l'intersection de l'art, de l'architecture et du design pour créer des expériences uniques et durables.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="content-wrapper">
+                <h2 data-i18n="contact.title">Contact</h2>
+                <div class="contact-info">
+                    <a href="mailto:contact@studio.com" data-i18n="contact.email">contact@studio.com</a>
+                    <a href="tel:+33123456789" data-i18n="contact.phone">+33 1 23 45 67 89</a>
+                    <p data-i18n="contact.address">Paris, France</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const translations = {
+            fr: {
+                site: {
+                    title: 'Studio Architecture',
+                    name: 'STUDIO ARCHITECTURE'
+                },
+                nav: {
+                    work: 'Projets',
+                    about: 'À Propos',
+                    contact: 'Contact'
+                },
+                villaModerne: {
+                    title: 'Villa Moderne',
+                    type: 'Résidentiel / 2024'
+                },
+                bureauDesign: {
+                    title: 'Bureau Design',
+                    type: 'Commercial / 2023'
+                },
+                loftUrban: {
+                    title: 'Loft Urban',
+                    type: 'Résidentiel / 2023'
+                },
+                scenicCity: {
+                    title: 'Scenic City',
+                    type: 'Développement urbain / 2024'
+                },
+                about: {
+                    title: 'À Propos',
+                    description: 'Notre studio d\'architecture crée des espaces qui transcendent l\'ordinaire. Nous travaillons à l\'intersection de l\'art, de l\'architecture et du design pour créer des expériences uniques et durables.'
+                },
+                contact: {
+                    title: 'Contact',
+                    email: 'contact@studio.com',
+                    phone: '+33 1 23 45 67 89',
+                    address: 'Paris, France'
+                }
+            },
+            en: {
+                site: {
+                    title: 'Studio Architecture',
+                    name: 'STUDIO ARCHITECTURE'
+                },
+                nav: {
+                    work: 'Projects',
+                    about: 'About',
+                    contact: 'Contact'
+                },
+                villaModerne: {
+                    title: 'Villa Moderne',
+                    type: 'Residential / 2024'
+                },
+                bureauDesign: {
+                    title: 'Bureau Design',
+                    type: 'Commercial / 2023'
+                },
+                loftUrban: {
+                    title: 'Loft Urban',
+                    type: 'Residential / 2023'
+                },
+                scenicCity: {
+                    title: 'Scenic City',
+                    type: 'Urban Development / 2024'
+                },
+                about: {
+                    title: 'About',
+                    description: 'Our architecture studio creates spaces that transcend the ordinary. We work at the intersection of art, architecture, and design to create unique and sustainable experiences.'
+                },
+                contact: {
+                    title: 'Contact',
+                    email: 'contact@studio.com',
+                    phone: '+33 1 23 45 67 89',
+                    address: 'Paris, France'
+                }
+            },
+            zh: {
+                site: {
+                    title: '',
+                    name: ''
+                },
+                nav: {
+                    work: '',
+                    about: '',
+                    contact: ''
+                },
+                villaModerne: {
+                    title: '',
+                    type: ''
+                },
+                bureauDesign: {
+                    title: '',
+                    type: ''
+                },
+                loftUrban: {
+                    title: '',
+                    type: ''
+                },
+                scenicCity: {
+                    title: '',
+                    type: ''
+                },
+                about: {
+                    title: '',
+                    description: ''
+                },
+                contact: {
+                    title: '',
+                    email: '',
+                    phone: '',
+                    address: ''
+                }
+            }
+        };
+    </script>
+    <script src="translations-index.js"></script>
+    <script src="language-index.js"></script>
+    <script src="main.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
