@@ -100,13 +100,93 @@ const translations = {
             description: "Notre studio d'architecture crée des espaces qui transcendent l'ordinaire. Nous travaillons à l'intersection de l'art, de l'architecture et du design pour créer des expériences uniques et durables."
         },
         contact: {
-            title: "Contact",
-            name: "Nom",
-            email: "Email",
-            message: "Message",
-            submit: "Envoyer",
-            address: "Paris, France",
-            phone: "+33 1 23 45 67 89"
+            title: {
+                fr: "Contact - Studio Architecture",
+                en: "Contact - Studio Architecture",
+                zh: "联系我们 - 建筑工作室"
+            },
+            heading: {
+                fr: "Demande de Devis",
+                en: "Request a Quote",
+                zh: "申请报价"
+            },
+            description: {
+                fr: "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les plus brefs délais.",
+                en: "Contact us to discuss your project. We will respond as soon as possible.",
+                zh: "联系我们讨论您的项目。我们会尽快回复您。"
+            },
+            form: {
+                name: {
+                    fr: "Nom",
+                    en: "Name",
+                    zh: "姓名"
+                },
+                email: {
+                    fr: "Email",
+                    en: "Email",
+                    zh: "电子邮件"
+                },
+                projectType: {
+                    fr: "Type de Projet",
+                    en: "Project Type",
+                    zh: "项目类型"
+                },
+                selectOption: {
+                    fr: "Sélectionnez une option",
+                    en: "Select an option",
+                    zh: "选择选项"
+                },
+                residential: {
+                    fr: "Résidentiel",
+                    en: "Residential",
+                    zh: "住宅"
+                },
+                commercial: {
+                    fr: "Commercial",
+                    en: "Commercial",
+                    zh: "商业"
+                },
+                renovation: {
+                    fr: "Rénovation",
+                    en: "Renovation",
+                    zh: "装修"
+                },
+                other: {
+                    fr: "Autre",
+                    en: "Other",
+                    zh: "其他"
+                },
+                budget: {
+                    fr: "Budget Estimé (€)",
+                    en: "Estimated Budget (€)",
+                    zh: "预算估计 (€)"
+                },
+                timeline: {
+                    fr: "Délai Souhaité",
+                    en: "Desired Timeline",
+                    zh: "期望时间"
+                },
+                message: {
+                    fr: "Description du Projet",
+                    en: "Project Description",
+                    zh: "项目描述"
+                },
+                submit: {
+                    fr: "Envoyer la Demande",
+                    en: "Send Request",
+                    zh: "发送请求"
+                },
+                success: {
+                    fr: "Votre message a été envoyé avec succès. Nous vous contacterons bientôt.",
+                    en: "Your message has been sent successfully. We will contact you soon.",
+                    zh: "您的消息已成功发送。我们会尽快与您联系。"
+                },
+                error: {
+                    fr: "Une erreur s'est produite. Veuillez réessayer.",
+                    en: "An error occurred. Please try again.",
+                    zh: "发生错误。请重试。"
+                }
+            }
         }
     },
     en: {
@@ -210,13 +290,93 @@ const translations = {
             description: "Our architecture studio creates spaces that transcend the ordinary. We work at the intersection of art, architecture, and design to create unique and sustainable experiences."
         },
         contact: {
-            title: "Contact",
-            name: "Name",
-            email: "Email",
-            message: "Message",
-            submit: "Send",
-            address: "Paris, France",
-            phone: "+33 1 23 45 67 89"
+            title: {
+                fr: "Contact - Studio Architecture",
+                en: "Contact - Studio Architecture",
+                zh: "联系我们 - 建筑工作室"
+            },
+            heading: {
+                fr: "Demande de Devis",
+                en: "Request a Quote",
+                zh: "申请报价"
+            },
+            description: {
+                fr: "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les plus brefs délais.",
+                en: "Contact us to discuss your project. We will respond as soon as possible.",
+                zh: "联系我们讨论您的项目。我们会尽快回复您。"
+            },
+            form: {
+                name: {
+                    fr: "Nom",
+                    en: "Name",
+                    zh: "姓名"
+                },
+                email: {
+                    fr: "Email",
+                    en: "Email",
+                    zh: "电子邮件"
+                },
+                projectType: {
+                    fr: "Type de Projet",
+                    en: "Project Type",
+                    zh: "项目类型"
+                },
+                selectOption: {
+                    fr: "Sélectionnez une option",
+                    en: "Select an option",
+                    zh: "选择选项"
+                },
+                residential: {
+                    fr: "Résidentiel",
+                    en: "Residential",
+                    zh: "住宅"
+                },
+                commercial: {
+                    fr: "Commercial",
+                    en: "Commercial",
+                    zh: "商业"
+                },
+                renovation: {
+                    fr: "Rénovation",
+                    en: "Renovation",
+                    zh: "装修"
+                },
+                other: {
+                    fr: "Autre",
+                    en: "Other",
+                    zh: "其他"
+                },
+                budget: {
+                    fr: "Budget Estimé (€)",
+                    en: "Estimated Budget (€)",
+                    zh: "预算估计 (€)"
+                },
+                timeline: {
+                    fr: "Délai Souhaité",
+                    en: "Desired Timeline",
+                    zh: "期望时间"
+                },
+                message: {
+                    fr: "Description du Projet",
+                    en: "Project Description",
+                    zh: "项目描述"
+                },
+                submit: {
+                    fr: "Envoyer la Demande",
+                    en: "Send Request",
+                    zh: "发送请求"
+                },
+                success: {
+                    fr: "Votre message a été envoyé avec succès. Nous vous contacterons bientôt.",
+                    en: "Your message has been sent successfully. We will contact you soon.",
+                    zh: "您的消息已成功发送。我们会尽快与您联系。"
+                },
+                error: {
+                    fr: "Une erreur s'est produite. Veuillez réessayer.",
+                    en: "An error occurred. Please try again.",
+                    zh: "发生错误。请重试。"
+                }
+            }
         }
     },
     zh: {
@@ -324,10 +484,93 @@ const translations = {
             description: "我们的建筑工作室创造超越平凡的空间。我们在艺术、建筑和设计的交汇处工作，创造独特和可持续的体验。"
         },
         contact: {
-            title: "联系我们",
-            email: "contact@studio.com",
-            phone: "+33 1 23 45 67 89",
-            address: "巴黎，法国"
+            title: {
+                fr: "Contact - Studio Architecture",
+                en: "Contact - Studio Architecture",
+                zh: "联系我们 - 建筑工作室"
+            },
+            heading: {
+                fr: "Demande de Devis",
+                en: "Request a Quote",
+                zh: "申请报价"
+            },
+            description: {
+                fr: "Contactez-nous pour discuter de votre projet. Nous vous répondrons dans les plus brefs délais.",
+                en: "Contact us to discuss your project. We will respond as soon as possible.",
+                zh: "联系我们讨论您的项目。我们会尽快回复您。"
+            },
+            form: {
+                name: {
+                    fr: "Nom",
+                    en: "Name",
+                    zh: "姓名"
+                },
+                email: {
+                    fr: "Email",
+                    en: "Email",
+                    zh: "电子邮件"
+                },
+                projectType: {
+                    fr: "Type de Projet",
+                    en: "Project Type",
+                    zh: "项目类型"
+                },
+                selectOption: {
+                    fr: "Sélectionnez une option",
+                    en: "Select an option",
+                    zh: "选择选项"
+                },
+                residential: {
+                    fr: "Résidentiel",
+                    en: "Residential",
+                    zh: "住宅"
+                },
+                commercial: {
+                    fr: "Commercial",
+                    en: "Commercial",
+                    zh: "商业"
+                },
+                renovation: {
+                    fr: "Rénovation",
+                    en: "Renovation",
+                    zh: "装修"
+                },
+                other: {
+                    fr: "Autre",
+                    en: "Other",
+                    zh: "其他"
+                },
+                budget: {
+                    fr: "Budget Estimé (€)",
+                    en: "Estimated Budget (€)",
+                    zh: "预算估计 (€)"
+                },
+                timeline: {
+                    fr: "Délai Souhaité",
+                    en: "Desired Timeline",
+                    zh: "期望时间"
+                },
+                message: {
+                    fr: "Description du Projet",
+                    en: "Project Description",
+                    zh: "项目描述"
+                },
+                submit: {
+                    fr: "Envoyer la Demande",
+                    en: "Send Request",
+                    zh: "发送请求"
+                },
+                success: {
+                    fr: "Votre message a été envoyé avec succès. Nous vous contacterons bientôt.",
+                    en: "Your message has been sent successfully. We will contact you soon.",
+                    zh: "您的消息已成功发送。我们会尽快与您联系。"
+                },
+                error: {
+                    fr: "Une erreur s'est produite. Veuillez réessayer.",
+                    en: "An error occurred. Please try again.",
+                    zh: "发生错误。请重试。"
+                }
+            }
         }
     }
 };

@@ -30,3 +30,4 @@ Un site web portfolio moderne pour architectes, inspiré par le design minimalis
 Pour modifier les couleurs et le style :
 1. Ouvrez `styles.css`.
 2. Modifiez les variables de couleur et les styles selon vos préférences.
+3.Readme par default
