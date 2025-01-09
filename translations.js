@@ -44,6 +44,22 @@ const translations = {
                 slide4: {
                     title: "Vue Aérienne",
                     subtitle: "Perspective"
+                },
+                slide5: {
+                    title: "Design Intérieur",
+                    subtitle: "Elegance"
+                },
+                slide6: {
+                    title: "Illumination",
+                    subtitle: "Nuit Urbaine"
+                },
+                slide7: {
+                    title: "Architecture",
+                    subtitle: "Modernité"
+                },
+                slide8: {
+                    title: "Espaces Verts",
+                    subtitle: "Harmonie"
                 }
             },
             gallery: {
@@ -195,7 +211,7 @@ const translations = {
             name: "STUDIO ARCHITECTURE"
         },
         nav: {
-            work: "Work",
+            work: "Project",
             about: "About",
             contact: "Contact"
         },
@@ -234,6 +250,22 @@ const translations = {
                 slide4: {
                     title: "Aerial View",
                     subtitle: "Perspective"
+                },
+                slide5: {
+                    title: "Interior Design",
+                    subtitle: "Elegance"
+                },
+                slide6: {
+                    title: "Illumination",
+                    subtitle: "Urban Night"
+                },
+                slide7: {
+                    title: "Architecture",
+                    subtitle: "Modernity"
+                },
+                slide8: {
+                    title: "Green Spaces",
+                    subtitle: "Harmony"
                 }
             },
             gallery: {
@@ -424,6 +456,22 @@ const translations = {
                 slide4: {
                     title: "鸟瞰图",
                     subtitle: "视角"
+                },
+                slide5: {
+                    title: "室内设计",
+                    subtitle: "优雅"
+                },
+                slide6: {
+                    title: "城市照明",
+                    subtitle: "都市之夜"
+                },
+                slide7: {
+                    title: "建筑设计",
+                    subtitle: "现代性"
+                },
+                slide8: {
+                    title: "绿色空间",
+                    subtitle: "和谐"
                 }
             },
             gallery: {

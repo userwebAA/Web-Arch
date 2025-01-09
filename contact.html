@@ -197,7 +197,7 @@
         }
     </style>
 </head>
-<body>
+<body class="index-page">
     <nav class="navbar">
         <div class="logo">
             <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
@@ -206,7 +206,7 @@
             <div class="nav-menu">
                 <a href="index.html#work" data-i18n="nav.work">Projets</a>
                 <a href="index.html#about" data-i18n="nav.about">À Propos</a>
-                <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+                <a href="" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="nav-controls">
                 <div class="language-selector">
@@ -313,9 +313,25 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="main.js"></script>
-    <script src="theme.js"></script>
+    <script src="translations.js"></script>
+    <script src="translation-contact.js"></script>
     <script src="language.js"></script>
+    <script src="navbar.js"></script>
+    <script src="theme.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get current language from localStorage or default to French
+            const currentLang = localStorage.getItem('selectedLanguage') || 'fr';
+            
+            // Update translations when page loads
+            updateContactTranslations(currentLang);
+            
+            // Listen for language changes
+            window.addEventListener('languageChanged', (event) => {
+                updateContactTranslations(event.detail.lang);
+            });
+        });
+
         (function() {
             emailjs.init("A_WLv5Q2lNcf5rnl0");
         })();

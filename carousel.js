@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         grabCursor: true,
         speed: 1000,
         loop: true,
-        parallax: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
@@ -25,13 +24,40 @@ document.addEventListener('DOMContentLoaded', () => {
             el: '.swiper-pagination',
             clickable: true,
             dynamicBullets: true,
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '"><span class="bullet-text">' + (index + 1) + '</span></span>';
-            }
         },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         }
+    });
+
+    // Gestion des miniatures
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            // Désactiver l'autoplay temporairement
+            swiper.autoplay.stop();
+            
+            // Naviguer vers l'image correspondante
+            swiper.slideToLoop(index, 800);
+            
+            // Mettre à jour la miniature active
+            updateActiveThumbnail(index);
+            
+            // Réactiver l'autoplay après un court délai
+            setTimeout(() => {
+                swiper.autoplay.start();
+            }, 2000);
+        });
+    });
+
+    function updateActiveThumbnail(index) {
+        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+        thumbnails[index].classList.add('active');
+    }
+
+    // Mettre à jour la miniature active lors du changement de slide
+    swiper.on('slideChange', () => {
+        updateActiveThumbnail(swiper.realIndex);
     });
 });

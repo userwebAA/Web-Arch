@@ -52,7 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update all translatable elements
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            const translation = getTranslation(key, lang);
+            let translation;
+
+            // Try to get translation from contactTranslations first
+            if (contactTranslations && contactTranslations[lang]) {
+                const keys = key.split('.');
+                let value = contactTranslations[lang];
+                for (const k of keys) {
+                    if (value && value[k]) {
+                        value = value[k];
+                    } else {
+                        value = null;
+                        break;
+                    }
+                }
+                if (value) {
+                    translation = value;
+                }
+            }
+
+            // If not found in contactTranslations, try translations
+            if (!translation) {
+                translation = getTranslation(key, lang);
+            }
             
             if (translation) {
                 if (element.tagName === 'INPUT' && element.type === 'submit') {
@@ -64,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+
+        // Dispatch event for other components
+        window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { lang }
+        }));
     }
 
     // Function to get translation

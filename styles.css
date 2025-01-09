@@ -27,6 +27,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -58,7 +60,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 1.5rem 5%;
     background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -320,6 +322,55 @@ main {
     opacity: 0.8;
 }
 
+/* Project text colors */
+.project-info,
+.project-title,
+.project-subtitle,
+.project-info h2,
+.project-info p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Project info styles */
+.project-info {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    z-index: 2;
+}
+
+.project-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff !important;
+}
+
+.project-info p {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #ffffff !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .project-info {
+        left: 1.5rem;
+        bottom: 1.5rem;
+        color: #ffffff !important;
+    }
+    
+    .project-info h2 {
+        font-size: 1.5rem;
+        color: #ffffff !important;
+    }
+    
+    .project-info p {
+        font-size: 1rem;
+        color: #ffffff !important;
+    }
+}
+
 /* About Section */
 .about {
     padding: 8rem 4rem;
@@ -472,6 +523,27 @@ main {
     opacity: 0.6;
 }
 
+/* Dark mode - Back to projects link */
+[data-theme="dark"] .back-to-projects,
+[data-theme="dark"] .project-navigation a {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .back-to-projects svg,
+[data-theme="dark"] .project-navigation svg {
+    stroke: #ffffff;
+}
+
+[data-theme="dark"] .back-to-projects:hover,
+[data-theme="dark"] .project-navigation a:hover {
+    color: #3498DB;
+}
+
+[data-theme="dark"] .back-to-projects:hover svg,
+[data-theme="dark"] .project-navigation a:hover svg {
+    stroke: #3498DB;
+}
+
 /* Project Gallery Styles */
 .text-section {
     max-width: 800px;
@@ -534,10 +606,12 @@ body::after {
     .project-info {
         left: 1.5rem;
         bottom: 1.5rem;
+        color: white;
     }
     
     .project-info h2 {
         font-size: 1.5rem;
+        color: white ;
     }
     
     .about,
@@ -584,10 +658,141 @@ body::after {
     }
 }
 
+/* Carousel Transitions */
+.swiper {
+    width: 100%;
+    height: 93.6vh;
+    margin-bottom: 4rem;
+    background: #000;
+}
+
+.swiper-slide {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.swiper-slide-active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    contain: paint;
+}
+
+.swiper-slide-active .slide-content img {
+    transform: scale(1.02);
+}
+
+.swiper-slide-prev .slide-content img,
+.swiper-slide-next .slide-content img {
+    transform: scale(1.1);
+    filter: blur(5px);
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 4.16rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.swiper-slide-active .slide-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation Buttons Animation */
+.swiper-button-next,
+.swiper-button-prev {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.6;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Pagination Animation */
+.swiper-pagination-bullet {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.swiper-pagination-bullet-active {
+    transform: scaleX(1.5);
+}
+
+/* Thumbnail Transitions */
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumbnail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.thumbnail img {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.05);
+    will-change: transform;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.15);
+}
+
+.thumbnail.active {
+    border: 2px solid #fff;
+    transform: translateY(-5px);
+}
+
+.thumbnail.active img {
+    transform: scale(1.1);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .swiper-slide-prev .slide-content img,
+    .swiper-slide-next .slide-content img {
+        transform: scale(1.05);
+        filter: blur(3px);
+    }
+
+    .thumbnail:hover {
+        transform: translateY(-3px);
+    }
+}
+
 /* Futuristic Carousel Styles */
 .swiper {
     width: 100%;
-    height: 90vh;
+    height: 98.4vh;
     margin-bottom: 4rem;
     background: #000;
 }
@@ -605,6 +810,40 @@ body::after {
     object-fit: cover;
     transform-origin: center;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    backface-visibility: hidden;
+    contain: paint;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+    contain: paint;
+}
+
+.slide-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: loading 1.5s infinite;
+    display: none;
+}
+
+.loading .slide-content::before {
+    display: block;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .slide-overlay {
@@ -612,7 +851,7 @@ body::after {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 4rem;
+    padding: 4.16rem;
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
     color: #fff;
     opacity: 0;
@@ -626,15 +865,42 @@ body::after {
 }
 
 .slide-overlay h2 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .slide-overlay p {
-    font-size: 1.2rem;
+    font-size: 1.248rem;
     opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        height: 54.4vh;
+    }
+    .slide-overlay {
+        padding: 2rem;
+    }
+
+    .slide-overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 20px;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 35px;
+    }
 }
 
 /* Futuristic Navigation */
@@ -695,26 +961,121 @@ body::after {
     opacity: 1;
 }
 
-@media (max-width: 768px) {
-    .slide-overlay {
-        padding: 2rem;
-    }
+/* Style spécifique pour la navbar de la page d'accueil */
+.index-page .navbar {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+    backdrop-filter: none;
+    color: white;
+    padding: 1.5rem 5%;
+}
 
-    .slide-overlay h2 {
-        font-size: 1.8rem;
-    }
+.index-page .navbar .nav-links a,
+.index-page .navbar .logo a,
+.index-page .navbar .language-toggle,
+.index-page .navbar .theme-toggle {
+    color: white;
+}
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 40px;
-        height: 40px;
-    }
+.index-page .navbar svg {
+    stroke: white;
+}
 
-    .swiper-pagination-bullet {
-        width: 20px;
-    }
+.index-page .navbar .language-options {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
 
-    .swiper-pagination-bullet-active {
-        width: 35px;
-    }
+.index-page .navbar .language-option {
+    color: white;
+}
+
+.index-page .navbar .language-option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Ajout d'une transition douce pour le scroll */
+.index-page .navbar.scrolled {
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+}
+
+.index-page .navbar.scrolled .nav-links a,
+.index-page .navbar.scrolled .logo a,
+.index-page .navbar.scrolled .language-toggle,
+.index-page .navbar.scrolled .theme-toggle {
+    color: var(--nav-text);
+}
+
+.index-page .navbar.scrolled svg {
+    stroke: var(--nav-text);
+}
+
+/* Dark mode text transitions */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+    --nav-text: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --hover-color: rgba(255, 255, 255, 0.05);
+    --section-bg: #1a1a1a;
+}
+
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .footer,
+[data-theme="dark"] .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .project-meta,
+[data-theme="dark"] .project-description {
+    background-color: var(--section-bg);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .about,
+[data-theme="dark"] .contact {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .about h2,
+[data-theme="dark"] .contact h2 {
+    color: #fff;
+}
+
+[data-theme="dark"] .about p,
+[data-theme="dark"] .contact p,
+[data-theme="dark"] .contact-info a,
+[data-theme="dark"] .contact-info p {
+    color: #e0e0e0;
+}
+
+[data-theme="dark"] .contact-info a:hover {
+    color: #3498DB;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] li {
+    color: var(--text-color);
+}
+
+/* Ensure smooth transitions */
+.about,
+.contact,
+.about *,
+.contact * {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
