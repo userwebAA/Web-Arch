@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" data-i18n="meta.description" content="Découvrez Villa Moderna, une résidence contemporaine luxueuse sur la Côte d'Azur. Studio Architecture présente cette réalisation unique.">
+    <meta name="keywords" data-i18n="meta.keywords" content="architecture, villa moderna, côte d'azur, design contemporain, architecture moderne, studio architecture">
+    <meta name="author" content="Studio Architecture">
+    <meta property="og:title" content="Villa Moderna - Studio Architecture">
+    <meta property="og:description" data-i18n="meta.ogDescription" content="Une résidence contemporaine luxueuse sur la Côte d'Azur">
+    <meta property="og:image" content="assets/img/scenic-city-1.jpg">
+    <meta property="og:url" content="https://www.studio-architecture.com/villa-moderna">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title data-i18n="villaModerna.title">Villa Moderna - Studio Architecture</title>
+    
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="assets/img/scenic-city-1.jpg" as="image">
+    <link rel="preload" href="src/css/styles.css" as="style">
+    <link rel="preload" href="src/js/carousel.js" as="script">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        .project-header {
+            max-width: 1000px;
+            margin: 0 auto 8rem;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .project-gallery {
+            margin-top: 4rem;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 98.5vh;
+            margin-bottom: 0;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            background: #000;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            background: #fff;
+        }
+
+        .thumbnail-container {
+            width: 100%;
+            background: #000;
+            padding: 20px 0;
+            margin-top: 0;
+        }
+
+        .thumbnail-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            padding: 0 20px;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            width: 150px;
+            height: 100px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail.active {
+            border-color: #fff;
+            opacity: 1;
+        }
+
+        .thumbnail:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .project-meta {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .swiper {
+                height: 56.5vh;
+            }
+
+            .thumbnail {
+                width: 100px;
+                height: 70px;
+            }
+        }
+
+        .slide-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            text-align: left;
+        }
+
+        .slide-overlay h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-overlay p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="project-detail index-page">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
+        </div>
+        <button class="mobile-menu-button" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <div class="nav-links">
+            <div class="nav-menu">
+                <a href="index.html#work" data-i18n="nav.work">Projets</a>
+                <a href="index.html#about" data-i18n="nav.about">À Propos</a>
+                <a href="./contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="language-toggle" aria-label="Sélectionner la langue">
+                        <span class="current-lang" data-i18n="nav.language">Français</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="language-options">
+                        <button class="language-option" data-lang="fr" data-i18n="nav.languageOption.fr">Français</button>
+                        <button class="language-option" data-lang="en" data-i18n="nav.languageOption.en">English</button>
+                        <button class="language-option" data-lang="zh" data-i18n="nav.languageOption.zh">中文</button>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <article class="project-content">
+            <header class="project-header">
+                <h1 data-i18n="villaModerna.title">Villa Moderna</h1>
+                <div class="project-meta">
+                    <div>
+                        <h3 data-i18n="projects.location">Localisation</h3>
+                        <p data-i18n="villaModerna.location">Côte d'Azur, France</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="projects.year">Année</h3>
+                        <p data-i18n="villaModerna.year">2023</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="projects.surface">Surface</h3>
+                        <p data-i18n="villaModerna.surface">450 m²</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="projects.status">Statut</h3>
+                        <p data-i18n="villaModerna.status">Complété</p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="project-gallery">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="assets/img/villa-moderne.jpg" alt="Villa Moderna - Vue Principale">
+                                <div class="slide-overlay">
+                                    <h2 data-i18n="villaModerna.carousel.slide1.title">Vue Principale</h2>
+                                    <p data-i18n="villaModerna.carousel.slide1.subtitle">Façade et Piscine</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="assets/img/villa-moderna-2.jpg" alt="Villa Moderna - Extérieur">
+                                <div class="slide-overlay">
+                                    <h2 data-i18n="villaModerna.carousel.slide2.title">Vue Extérieure</h2>
+                                    <p data-i18n="villaModerna.carousel.slide2.subtitle">Architecture Contemporaine</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="assets/img/villa-moderna-3.jpg" alt="Villa Moderna - Salon">
+                                <div class="slide-overlay">
+                                    <h2 data-i18n="villaModerna.carousel.slide3.title">Salon</h2>
+                                    <p data-i18n="villaModerna.carousel.slide3.subtitle">Espace de Vie Lumineux</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-content">
+                                <img src="assets/img/villa-moderna-4.jpg" alt="Villa Moderna - Piscine">
+                                <div class="slide-overlay">
+                                    <h2 data-i18n="villaModerna.carousel.slide4.title">Piscine</h2>
+                                    <p data-i18n="villaModerna.carousel.slide4.subtitle">Détente et Bien-être</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <div class="thumbnail-container">
+                    <div class="thumbnail-wrapper">
+                        <div class="thumbnail active" data-index="0">
+                            <img src="assets/img/villa-moderne.jpg" alt="Miniature 1">
+                        </div>
+                        <div class="thumbnail" data-index="1">
+                            <img src="assets/img/villa-moderna-2.jpg" alt="Miniature 2">
+                        </div>
+                        <div class="thumbnail" data-index="2">
+                            <img src="assets/img/villa-moderna-3.jpg" alt="Miniature 3">
+                        </div>
+                        <div class="thumbnail" data-index="3">
+                            <img src="assets/img/villa-moderna-4.jpg" alt="Miniature 4">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <nav class="project-navigation">
+                <a href="index.html" class="back-to-projects" data-i18n="projects.backToProjects">← Retour aux Projets</a>
+            </nav>
+        </article>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/translations.js"></script>
+    <script src="src/js/translations-index.js"></script>
+    <script src="src/js/translations-moderna.js"></script>
+    <script src="src/js/theme.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialisation de la langue
+            const savedLang = localStorage.getItem('selectedLanguage') || 'fr';
+            setLanguage(savedLang);
+
+            // Mise à jour de l'affichage de la langue
+            const currentLangDisplay = document.querySelector('.current-lang');
+            if (currentLangDisplay) {
+                const langNames = {
+                    'fr': 'Français',
+                    'en': 'English',
+                    'zh': '中文'
+                };
+                currentLangDisplay.textContent = langNames[savedLang];
+            }
+
+            // Gestionnaire de changement de langue
+            document.querySelectorAll('.language-option').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const lang = e.target.dataset.lang;
+                    localStorage.setItem('selectedLanguage', lang);
+                    window.location.reload();
+                });
+            });
+
+            // Fonction de traduction
+            function setLanguage(lang) {
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.dataset.i18n;
+                    try {
+                        const keys = key.split('.');
+                        let translation;
+                        if (key.startsWith('site.') || key.startsWith('projects.') || key.startsWith('nav.')) {
+                            translation = translations[lang];
+                        } else {
+                            translation = villaModernaTranslations[lang];
+                        }
+                        for (const k of keys) {
+                            translation = translation[k];
+                        }
+                        if (translation) {
+                            element.textContent = translation;
+                        }
+                    } catch (error) {
+                        console.error(`Error translating ${key}:`, error);
+                    }
+                });
+            }
+
+            // Configuration du carrousel
+            const swiper = new Swiper('.swiper', {
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 1500,
+                autoplay: {
+                    delay: 7000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                grabCursor: true,
+                parallax: true,
+                loop: true,
+                loopedSlides: 4,
+                
+                // Navigation
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                
+                // Optimisation des images
+                preloadImages: false,
+                lazy: {
+                    loadPrevNext: true,
+                    loadPrevNextAmount: 2
+                },
+                watchSlidesProgress: true,
+                
+                // Événements de transition
+                on: {
+                    init: function() {
+                        this.el.classList.remove('loading');
+                        updateThumbnails(this.realIndex);
+                    },
+                    slideChange: function() {
+                        updateThumbnails(this.realIndex);
+                    }
+                }
+            });
+
+            // Gestion des miniatures
+            function updateThumbnails(activeIndex) {
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                thumbnails[activeIndex].classList.add('active');
+            }
+
+            // Click sur les miniatures
+            document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    swiper.slideToLoop(index, 1500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

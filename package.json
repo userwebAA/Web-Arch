@@ -1,5 +1,25 @@
 {
+  "name": "studio-architecture",
+  "version": "1.0.0",
+  "description": "Studio Architecture - Portfolio professionnel",
+  "scripts": {
+    "start": "live-server",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "analyze": "webpack-bundle-analyzer dist/stats.json"
+  },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1"
+    "@emailjs/browser": "^4.4.1",
+    "swiper": "^8.4.7",
+    "i18next": "^22.4.9"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "terser-webpack-plugin": "^5.3.6",
+    "compression-webpack-plugin": "^10.0.0",
+    "webpack-bundle-analyzer": "^4.9.0",
+    "live-server": "^1.2.2"
   }
 }

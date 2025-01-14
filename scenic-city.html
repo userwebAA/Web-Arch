@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" data-i18n="meta.description" content="Découvrez Scenic City, un projet architectural innovant alliant modernité et durabilité au cœur de Shanghai. Studio Architecture présente cette réalisation unique.">
+    <meta name="keywords" data-i18n="meta.keywords" content="architecture, scenic city, shanghai, design urbain, architecture moderne, studio architecture">
+    <meta name="author" content="Studio Architecture">
+    <meta property="og:title" content="Scenic City - Studio Architecture">
+    <meta property="og:description" data-i18n="meta.ogDescription" content="Un projet architectural innovant au cœur de Shanghai">
+    <meta property="og:image" content="assets/img/scenic-city-1.jpg">
+    <meta property="og:url" content="https://www.studio-architecture.com/scenic-city">
+    <meta name="twitter:card" content="summary_large_image">
+    
     <title data-i18n="scenicCity.title">Scenic City - Studio Architecture</title>
     
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="assets/img/scenic-city-1.jpg" as="image">
+    <link rel="preload" href="src/css/styles.css" as="style">
+    <link rel="preload" href="src/js/carousel.js" as="script">
+    
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,10 +164,17 @@
         <div class="logo">
             <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
         </div>
+        <button class="mobile-menu-button" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
         <div class="nav-links">
             <div class="nav-menu">
-                <a href="index.html#work" data-i18n="nav.work">Work</a>
-                <a href="index.html#about" data-i18n="nav.about">About</a>
+                <a href="index.html#work" data-i18n="nav.work">Projets</a>
+                <a href="index.html#about" data-i18n="nav.about">À Propos</a>
                 <a href="./contact.html" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="nav-controls">
@@ -170,7 +191,7 @@
                         <button class="language-option" data-lang="zh">中文</button>
                     </div>
                 </div>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
                     <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
@@ -197,19 +218,19 @@
                 <div class="project-meta">
                     <div>
                         <p data-i18n="projects.location">Location</p>
-                        <p data-i18n="scenicCity.location">Shanghai, China</p>
+                        <p data-i18n="project.location">Shanghai, Chine</p>
                     </div>
                     <div>
                         <p data-i18n="projects.year">Year</p>
-                        <p data-i18n="scenicCity.year">2024</p>
+                        <p data-i18n="project.year">2024</p>
                     </div>
                     <div>
-                        <p data-i18n="projects.surface">Surface</p>
-                        <p>125,000 m²</p>
+                        <p data-i18n="projects.status">Status</p>
+                        <p data-i18n="project.status">En construction</p>
                     </div>
                     <div>
                         <p data-i18n="projects.type">Type</p>
-                        <p data-i18n="scenicCity.type">Urban Development</p>
+                        <p data-i18n="project.type">Développement urbain</p>
                     </div>
                 </div>
             </header>
@@ -219,81 +240,81 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" 
-                                     alt="Vue panoramique de Scenic City">
+                                <img src="assets/img/scenic-city-1.jpg" 
+                                     data-i18n-alt="project.gallery.slide1.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide1.title">Vue Panoramique</h2>
-                                    <p data-i18n="scenicCity.carousel.slide1.subtitle">2024</p>
+                                    <h2 data-i18n="project.gallery.slide1.title">Vue Panoramique</h2>
+                                    <p data-i18n="project.gallery.slide1.subtitle">2024</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e" 
-                                     alt="Vue urbaine de nuit">
+                                <img src="assets/img/scenic-city-2.jpg" 
+                                     data-i18n-alt="project.gallery.slide2.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide2.title">Vue Nocturne</h2>
-                                    <p data-i18n="scenicCity.carousel.slide2.subtitle">Urban Lights</p>
+                                    <h2 data-i18n="project.gallery.slide2.title">Vue Nocturne</h2>
+                                    <p data-i18n="project.gallery.slide2.subtitle">Urban Lights</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4" 
-                                     alt="Architecture moderne">
+                                <img src="assets/img/scenic-city-3.jpg" 
+                                     data-i18n-alt="project.gallery.slide3.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide3.title">Design Moderne</h2>
-                                    <p data-i18n="scenicCity.carousel.slide3.subtitle">Innovation</p>
+                                    <h2 data-i18n="project.gallery.slide3.title">Design Moderne</h2>
+                                    <p data-i18n="project.gallery.slide3.subtitle">Innovation</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1506146332389-18140dc7b2fb" 
-                                     alt="Vue aérienne">
+                                <img src="assets/img/scenic-city-4.jpg" 
+                                     data-i18n-alt="project.gallery.slide4.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide4.title">Vue Aérienne</h2>
-                                    <p data-i18n="scenicCity.carousel.slide4.subtitle">Perspective</p>
+                                    <h2 data-i18n="project.gallery.slide4.title">Vue Aérienne</h2>
+                                    <p data-i18n="project.gallery.slide4.subtitle">Perspective</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e" 
-                                     alt="Vue intérieure">
+                                <img src="assets/img/scenic-city-5.jpg" 
+                                     data-i18n-alt="project.gallery.slide5.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide5.title">Design Intérieur</h2>
-                                    <p data-i18n="scenicCity.carousel.slide5.subtitle">Élégance</p>
+                                    <h2 data-i18n="project.gallery.slide5.title">Design Intérieur</h2>
+                                    <p data-i18n="project.gallery.slide5.subtitle">Élégance</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2" 
-                                     alt="Vue de nuit">
+                                <img src="assets/img/scenic-city-6.jpg" 
+                                     data-i18n-alt="project.gallery.slide6.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide6.title">Illumination</h2>
-                                    <p data-i18n="scenicCity.carousel.slide6.subtitle">Nuit urbaine</p>
+                                    <h2 data-i18n="project.gallery.slide6.title">Illumination</h2>
+                                    <p data-i18n="project.gallery.slide6.subtitle">Nuit urbaine</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" 
-                                     alt="Façade moderne">
+                                <img src="assets/img/scenic-city-7.jpg" 
+                                     data-i18n-alt="project.gallery.slide7.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide7.title">Architecture</h2>
-                                    <p data-i18n="scenicCity.carousel.slide7.subtitle">Modernité</p>
+                                    <h2 data-i18n="project.gallery.slide7.title">Architecture</h2>
+                                    <p data-i18n="project.gallery.slide7.subtitle">Modernité</p>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="slide-content">
-                                <img src="https://images.unsplash.com/photo-1464082354059-27db6ce50048" 
-                                     alt="Espace vert">
+                                <img src="assets/img/scenic-city-8.jpg" 
+                                     data-i18n-alt="project.gallery.slide8.alt">
                                 <div class="slide-overlay">
-                                    <h2 data-i18n="scenicCity.carousel.slide8.title">Espaces Verts</h2>
-                                    <p data-i18n="scenicCity.carousel.slide8.subtitle">Harmonie</p>
+                                    <h2 data-i18n="project.gallery.slide8.title">Espaces Verts</h2>
+                                    <p data-i18n="project.gallery.slide8.subtitle">Harmonie</p>
                                 </div>
                             </div>
                         </div>
@@ -306,28 +327,28 @@
                 <div class="thumbnail-container">
                     <div class="thumbnail-wrapper">
                         <div class="thumbnail active" data-index="0">
-                            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" alt="Thumbnail 1">
+                            <img src="assets/img/scenic-city-1.jpg" alt="Thumbnail 1">
                         </div>
                         <div class="thumbnail" data-index="1">
-                            <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e" alt="Thumbnail 2">
+                            <img src="assets/img/scenic-city-2.jpg" alt="Thumbnail 2">
                         </div>
                         <div class="thumbnail" data-index="2">
-                            <img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4" alt="Thumbnail 3">
+                            <img src="assets/img/scenic-city-3.jpg" alt="Thumbnail 3">
                         </div>
                         <div class="thumbnail" data-index="3">
-                            <img src="https://images.unsplash.com/photo-1506146332389-18140dc7b2fb" alt="Thumbnail 4">
+                            <img src="assets/img/scenic-city-4.jpg" alt="Thumbnail 4">
                         </div>
                         <div class="thumbnail" data-index="4">
-                            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e" alt="Thumbnail 5">
+                            <img src="assets/img/scenic-city-5.jpg" alt="Thumbnail 5">
                         </div>
                         <div class="thumbnail" data-index="5">
-                            <img src="https://images.unsplash.com/photo-1451976426598-a7593bd6d0b2" alt="Thumbnail 6">
+                            <img src="assets/img/scenic-city-6.jpg" alt="Thumbnail 6">
                         </div>
                         <div class="thumbnail" data-index="6">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="Thumbnail 7">
+                            <img src="assets/img/scenic-city-7.jpg" alt="Thumbnail 7">
                         </div>
                         <div class="thumbnail" data-index="7">
-                            <img src="https://images.unsplash.com/photo-1464082354059-27db6ce50048" alt="Thumbnail 8">
+                            <img src="assets/img/scenic-city-8.jpg" alt="Thumbnail 8">
                         </div>
                     </div>
                 </div>
@@ -341,8 +362,13 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="carousel.js"></script>
-    <script src="translations.js"></script>
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/carousel.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/language-index.js"></script>
+    <script src="src/js/translations-index.js"></script>
+    <script src="src/js/theme.js"></script>
+    <script src="src/js/translations-scenic.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Get saved language or use French as default
@@ -405,27 +431,44 @@
 
             // Image optimization code
             const swiper = new Swiper('.swiper', {
-                // Configuration existante
-                
-                // Transitions fluides
                 effect: 'fade',
                 fadeEffect: {
                     crossFade: true
                 },
-                speed: 800,
+                speed: 1200,
                 autoplay: {
-                    delay: 5000,
+                    delay: 6000,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true
                 },
                 grabCursor: true,
                 parallax: true,
+                loop: true,
+                loopedSlides: 8,
+                
+                // Navigation
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: false,
+                    type: 'bullets',
+                    bulletElement: 'span',
+                    bulletClass: 'swiper-pagination-bullet',
+                    bulletActiveClass: 'swiper-pagination-bullet-active',
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '"></span>';
+                    }
+                },
                 
                 // Optimisation des images
                 preloadImages: false,
                 lazy: {
                     loadPrevNext: true,
-                    loadPrevNextAmount: 2,
+                    loadPrevNextAmount: 2
                 },
                 watchSlidesProgress: true,
                 
@@ -433,52 +476,37 @@
                 on: {
                     init: function() {
                         this.el.classList.remove('loading');
+                        const totalSlides = document.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+                        console.log('Total slides:', totalSlides);
+                        updateThumbnails(this.realIndex);
                     },
                     slideChange: function() {
-                        // Précharger les images suivantes
-                        const nextIndex = (this.activeIndex + 1) % this.slides.length;
-                        const nextSlide = this.slides[nextIndex];
-                        if (nextSlide) {
-                            const img = nextSlide.querySelector('img');
-                            if (img && !img.complete) {
-                                nextSlide.classList.add('loading');
-                                img.onload = () => nextSlide.classList.remove('loading');
-                            }
-                        }
-                    },
-                    transitionStart: function() {
-                        const activeSlide = this.slides[this.activeIndex];
-                        if (activeSlide) {
-                            activeSlide.style.zIndex = 1;
-                        }
-                    },
-                    transitionEnd: function() {
-                        this.slides.forEach(slide => {
-                            slide.style.zIndex = 0;
-                        });
+                        updateThumbnails(this.realIndex);
                     }
                 }
             });
 
-            // Optimisation des miniatures
-            const thumbnails = document.querySelectorAll('.thumbnail img');
-            const imageCache = new Set();
+            // Gestion des miniatures
+            function updateThumbnails(activeIndex) {
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                thumbnails[activeIndex].classList.add('active');
+            }
 
-            thumbnails.forEach(thumb => {
-                // Créer un cache d'images
-                const img = new Image();
-                img.src = thumb.src;
-                imageCache.add(img);
-
-                // Ajouter un effet de chargement
-                thumb.addEventListener('load', function() {
-                    this.parentElement.classList.remove('loading');
+            // Click sur les miniatures
+            document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    swiper.slideToLoop(index);
                 });
             });
         });
+        
+        // Fusion des traductions
+        const translations = {
+            fr: { ...indexTranslations.fr, ...scenicTranslations.fr },
+            en: { ...indexTranslations.en, ...scenicTranslations.en },
+            zh: { ...indexTranslations.zh, ...scenicTranslations.zh }
+        };
     </script>
-    <script src="navbar.js"></script>
-    <script src="theme.js"></script>
-    <script src="main.js"></script>
 </body>
 </html>

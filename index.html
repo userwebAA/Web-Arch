@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="site.title">Studio Architecture</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,6 +14,13 @@
         <div class="logo">
             <a href="index.html" data-i18n="site.name">STUDIO ARCHITECTURE</a>
         </div>
+        <button class="mobile-menu-button" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
         <div class="nav-links">
             <div class="nav-menu">
                 <a href="#work" data-i18n="nav.work">Projets</a>
@@ -57,17 +64,17 @@
     <main>
         <section id="work" class="projects">
             <article class="project-item full-width">
-                <a href="villa-moderne.html">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Villa Moderne">
+                <a href="villa-moderna.html">
+                    <img src="assets/img/villa-moderne.jpg" alt="Villa Moderna">
                     <div class="project-info">
-                        <h2 data-i18n="villaModerne.title">Villa Moderne</h2>
-                        <p data-i18n="villaModerne.type">Résidentiel / 2024</p>
+                        <h2 data-i18n="villaModerna.title">Villa Moderna</h2>
+                        <p data-i18n="villaModerna.type">Résidentiel / 2024</p>
                     </div>
                 </a>
             </article>
 
             <article class="project-item full-width">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" alt="Bureau Design">
+                <img src="assets/img/bureau-design.jpg" alt="Bureau Design">
                 <div class="project-info">
                     <h2 data-i18n="bureauDesign.title">Bureau Design</h2>
                     <p data-i18n="bureauDesign.type">Commercial / 2023</p>
@@ -75,7 +82,7 @@
             </article>
 
             <article class="project-item full-width">
-                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" alt="Loft Urban">
+                <img src="assets/img/loft-urban.jpg" alt="Loft Urban">
                 <div class="project-info">
                     <h2 data-i18n="loftUrban.title">Loft Urban</h2>
                     <p data-i18n="loftUrban.type">Résidentiel / 2023</p>
@@ -84,7 +91,7 @@
 
             <article class="project-item full-width">
                 <a href="scenic-city.html">
-                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2" alt="Scenic City">
+                    <img src="assets/img/scenic-city.jpg" alt="Scenic City">
                     <div class="project-info">
                         <h2 data-i18n="scenicCity.title">Scenic City</h2>
                         <p data-i18n="scenicCity.type">Développement urbain / 2024</p>
@@ -124,8 +131,8 @@
                     about: 'À Propos',
                     contact: 'Contact'
                 },
-                villaModerne: {
-                    title: 'Villa Moderne',
+                villaModerna: {
+                    title: 'Villa Moderna',
                     type: 'Résidentiel / 2024'
                 },
                 bureauDesign: {
@@ -161,8 +168,8 @@
                     about: 'About',
                     contact: 'Contact'
                 },
-                villaModerne: {
-                    title: 'Villa Moderne',
+                villaModerna: {
+                    title: 'Villa Moderna',
                     type: 'Residential / 2024'
                 },
                 bureauDesign: {
@@ -198,7 +205,7 @@
                     about: '',
                     contact: ''
                 },
-                villaModerne: {
+                villaModerna: {
                     title: '',
                     type: ''
                 },
@@ -227,10 +234,10 @@
             }
         };
     </script>
-    <script src="translations-index.js"></script>
-    <script src="language-index.js"></script>
-    <script src="navbar.js"></script>
-    <script src="main.js"></script>
-    <script src="theme.js"></script>
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/language-index.js"></script>
+    <script src="src/js/translations-index.js"></script>
+    <script src="src/js/theme.js"></script>
 </body>
 </html>
